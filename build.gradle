@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+group 'devexprezo'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    sourceCompatibility = 15
+    targetCompatibility = 15
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'junit:junit:4.13.2'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.11.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.11.0'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha7'
+    testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.8.0-beta4'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.8.0-beta4'
+    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
+    implementation group: 'jakarta.annotation', name: 'ca-parent', version: '2.0.0-RC1', ext: 'pom'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.9.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '4.9.0'
+
+}
