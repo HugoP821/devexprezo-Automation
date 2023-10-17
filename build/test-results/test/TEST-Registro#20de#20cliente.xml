@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Registro de cliente" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-10-17T03:39:00" hostname="JAIR" time="13.546">
+<testsuite name="Registro de cliente" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-10-17T03:51:16" hostname="JAIR" time="10.188">
   <properties/>
-  <testcase name="Como usuario deseo registrar un nuevo usuario y validar los datos" classname="Registro de cliente" time="13.546">
+  <testcase name="Como usuario deseo registrar un nuevo usuario y validar los datos" classname="Registro de cliente" time="10.188">
     <failure message="io.cucumber.core.exception.CucumberException: Failed to instantiate class steps.devexprezoSteps" type="io.cucumber.core.exception.CucumberException">io.cucumber.core.exception.CucumberException: Failed to instantiate class steps.devexprezoSteps
 	at app//io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:67)
 	at app//io.cucumber.core.backend.DefaultObjectFactory.getInstance(DefaultObjectFactory.java:45)
@@ -41,6 +41,7 @@
 	at app//io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
 	at app//io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
 	at app//io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at app//org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at app//org.junit.runners.ParentRunner.run(ParentRunner.java:413)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
@@ -69,7 +70,7 @@ Caused by: java.lang.reflect.InvocationTargetException
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
 	at io.cucumber.core.backend.DefaultObjectFactory.cacheNewInstance(DefaultObjectFactory.java:53)
-	... 60 more
+	... 61 more
 Caused by: java.lang.IllegalArgumentException: Input must be set
 	at org.openqa.selenium.internal.Require.nonNull(Require.java:59)
 	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
@@ -79,7 +80,7 @@ Caused by: java.lang.IllegalArgumentException: Input must be set
 	at pages.devexprezoPage.&lt;init&gt;(devexprezoPage.java:10)
 	at steps.devexprezoSteps.&lt;init&gt;(devexprezoSteps.java:9)
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	... 63 more
+	... 64 more
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
@@ -149,6 +150,7 @@ java.lang.AbstractMethodError: Receiver class org.slf4j.log4j12.Log4j12ServicePr
 	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
 	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
 	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
@@ -175,16 +177,16 @@ java.lang.AbstractMethodError: Receiver class org.slf4j.log4j12.Log4j12ServicePr
 log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
 log4j:WARN Please initialize the log4j system properly.
 log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-1697513944704	geckodriver	INFO	Listening on 127.0.0.1:6938
-1697513945882	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "8491" "--remote- ... //localhost:8491/,http://[::1]:8491/" "-no-remote" "-profile" "C:\\Users\\jaird\\AppData\\Local\\Temp\\rust_mozprofileiQ6Fl9"
+1697514678523	geckodriver	INFO	Listening on 127.0.0.1:13283
+1697514679444	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "27106" "--remote ... localhost:27106/,http://[::1]:27106/" "-no-remote" "-profile" "C:\\Users\\jaird\\AppData\\Local\\Temp\\rust_mozprofile5LwJkK"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1697513946884	Marionette	INFO	Marionette enabled
+1697514680357	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1697513947258	Marionette	INFO	Listening on port 60465
-WebDriver BiDi listening on ws://127.0.0.1:8491
-Read port: 60465
-1697513947850	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-DevTools listening on ws://127.0.0.1:8491/devtools/browser/db0917f2-5dbb-407a-9cd6-f13a9987e39d
+1697514680738	Marionette	INFO	Listening on port 60803
+WebDriver BiDi listening on ws://127.0.0.1:27106
+Read port: 60803
+1697514681221	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:27106/devtools/browser/f8fa548f-a5f4-4db9-a5e2-cc55e07d94a7
 ]]></system-err>
 </testsuite>
