@@ -4,10 +4,6 @@ plugins {
 group 'devexprezo'
 version '1.0-SNAPSHOT'
 
-allprojects {
-    sourceCompatibility = 15
-    targetCompatibility = 15
-}
 
 repositories {
     mavenCentral()

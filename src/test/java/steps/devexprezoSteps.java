@@ -5,6 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.devexprezoPage;
 
+import java.text.ParseException;
+
 public class devexprezoSteps {
     devexprezoPage devexprezo = new devexprezoPage();
     @Given("^El usuario navega a devexprezo$")
@@ -23,9 +25,9 @@ public class devexprezoSteps {
     public void enterLastName(String apellidoPaterno, String apellidoMaterno){
         devexprezo.enterLastName(apellidoPaterno, apellidoMaterno);
     }
-    @And("^Ingresa fecha de nacimiento (.+) (.+) (.+)$")
-    public void enterFechaNacimiento(String day, String month, String year){
-        devexprezo.enterFechaNacimiento(day, month, year);
+    @And("^Ingresa fecha de nacimiento (.+)$")
+    public void enterFechaNacimiento(String fecha) {
+        devexprezo.enterFechaNacimiento(fecha);
     }
     @And("^Ingresa telefono (.+)$")
     public void enterNumberOfPhone(String number){
@@ -67,11 +69,11 @@ public class devexprezoSteps {
     public void selectSucursal(){
         devexprezo.selectSucursal();
     }
-    @And("^Ingresa numero de cliente red (.+)")
+    @And("^Ingresa numero de cliente red (.+)$")
     public void enterClientRed(String zorroID){
         devexprezo.enterClienteRed(zorroID);
     }
-    @And("^Ingresa contraseña (.+)")
+    @And("^Ingresa contrasena (.+)$")
     public void enterPass(String pass){
         devexprezo.enterPass(pass);
     }
@@ -79,7 +81,7 @@ public class devexprezoSteps {
     public void selectTermsPriv(){
         devexprezo.selectTerminosAndPrivacity();
     }
-    @And("^envia los datos")
+    @And("^envia los datos$")
     public void sendData(){
         devexprezo.registrar();
     }

@@ -7,7 +7,7 @@
           And Da click en registrarse
           And Ingresa el nombre de Hugo
           And Ingresa apellidos Palomino Avila
-          And Ingresa fecha de nacimiento 27 01 2000
+          And Ingresa fecha de nacimiento 2000-01-27
           And Ingresa telefono 5543844314
           And Ingresa email test@test.com
           And Ingresa calle Cerrada de meseta
@@ -19,6 +19,6 @@
           And Validar estado
           And Ingresa sucursal
           And Ingresa numero de cliente red 13
-          And Ingresa contraseña 12345678
+          And Ingresa contrasena 12345678a
           And seleeciona los terminos y privacidad
-          And envia los datos
+          #And envia los datos

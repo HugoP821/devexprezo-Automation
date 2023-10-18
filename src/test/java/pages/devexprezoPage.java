@@ -1,13 +1,17 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class devexprezoPage extends basepage{
     public devexprezoPage(){
         super(driver, wait);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(className = "icon-edit")
@@ -32,7 +36,7 @@ public class devexprezoPage extends basepage{
     private WebElement inputNumberExterior;
     @FindBy(id = "dir_no_interior")
     private WebElement inputNumberInterior;
-    @FindBy(id = "cli_c")
+    @FindBy(id = "cli_cp")
     private WebElement inputCP;
     @FindBy(id = "dir_colonia")
     private WebElement lblColonia;
@@ -60,22 +64,28 @@ public class devexprezoPage extends basepage{
     }
     public void registerUser(){
         wait.until(ExpectedConditions.visibilityOf(btnRegister)).click();
+        navigateTo("https://devexprezo.com.mx/login");
     }
     public void enterName(String name){
+        waitForPageLoad("https://devexprezo.com.mx/signin");
+        sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(inputName)).sendKeys(name);
     }
     public void enterLastName(String apellidoPaterno, String apellidoMaterno){
         wait.until(ExpectedConditions.elementToBeClickable(inputSurname)).sendKeys(apellidoPaterno);
         wait.until(ExpectedConditions.elementToBeClickable(inputSurname2)).sendKeys(apellidoMaterno);
     }
-    public void enterFechaNacimiento(String day, String month, String year){
-        wait.until(ExpectedConditions.elementToBeClickable(inputFechaNacimiento)).sendKeys(day, month, year);
+    public void enterFechaNacimiento(String fecha) {
+        wait.until(ExpectedConditions.elementToBeClickable(inputFechaNacimiento)).clear();
+        inputFechaNacimiento.click();
+        inputFechaNacimiento.sendKeys(fecha);
     }
     public void enterNumberPhone(String number){
         wait.until(ExpectedConditions.elementToBeClickable(inputNumber)).sendKeys(number);
     }
     public void enterEmail(String email){
         wait.until(ExpectedConditions.elementToBeClickable(inputEmail)).sendKeys(email);
+        wait.until(ExpectedConditions.elementToBeClickable(inputEmailConfirmation)).sendKeys(email);
     }
     public void enterStreet(String steet){
         wait.until(ExpectedConditions.elementToBeClickable(inputStreet)).sendKeys(steet);
@@ -84,18 +94,20 @@ public class devexprezoPage extends basepage{
         wait.until(ExpectedConditions.elementToBeClickable(inputNumberExterior)).sendKeys(numExterior);
     }
     public void enterNumberInterior(String numInterior){
-        int seleccionaInterior = basepage.generaNumeroRandom(1,9);
+        int seleccionaInterior = basepage.generaNumeroRandom(1,2);
         if (seleccionaInterior == 1){
             wait.until(ExpectedConditions.elementToBeClickable(inputNumberInterior)).sendKeys(numInterior);
         }else {
-            System.out.println("El campo numero interior en la dirección se dejo vacio.");
+            System.out.println("El campo numero interior en la direccion se dejo vacio.");
         }
     }
     public void enterCodigoPostal(String postal){
         wait.until(ExpectedConditions.elementToBeClickable(inputCP)).sendKeys(postal);
     }
     public void selectColonia(){
-        wait.until(ExpectedConditions.visibilityOf(lblColonia)).click();
+        scrollDown(100);
+        sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(lblColonia)).click();
         listSelectRandom(lblColonia);
     }
     public void validateCiudad(){
@@ -107,12 +119,14 @@ public class devexprezoPage extends basepage{
         System.out.println(valueEstate);
     }
     public void selectSucursal(){
+        scrollDown(200);
+        sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(lblSucursal)).click();
         listSelectRandom(lblSucursal);
     }
     public void enterClienteRed(String zorroID){
-        int seVaSeleccionar = basepage.generaNumeroRandom(1,99);
-        if (seVaSeleccionar == 5){
+        int seVaSeleccionar = basepage.generaNumeroRandom(1,3);
+        if (seVaSeleccionar == 1){
             wait.until(ExpectedConditions.elementToBeClickable(inputZorroID)).sendKeys(zorroID);
         }
     }
